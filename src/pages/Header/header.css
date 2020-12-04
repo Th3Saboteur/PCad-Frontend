@@ -1,0 +1,45 @@
+body{
+    background-color: #3d7deb88;
+}
+header{
+    width: 100%;
+    background-color: #1C396B;
+    height: 100px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+header img{
+    max-width: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+header figure{
+    max-width: 60px;
+    align-items: center;
+}
+figcaption{
+    align-items: center;
+    color: #85ACEE;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+}   
+#user select{
+    width: 100px;
+    height: 20px;
+    background: transparent;
+}
+select{
+    height: 40px;
+    width: 80px;
+}
+input{
+    height: 40px;
+    width: 500px;
+}
+.logo {
+    max-width: 120px;
+}

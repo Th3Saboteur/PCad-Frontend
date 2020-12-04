@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import './style.css';
 
 function CreateAccount() { 
+
     return (
       <div id="create-account">
         <h1>Crie Sua Conta :)</h1>
