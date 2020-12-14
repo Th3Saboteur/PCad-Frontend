@@ -1,22 +1,20 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import Header from '../Header/header'
-import './style.css';
+import Header from '../Header/index';
+import Carousel from '../Carousel/index';
+import Footer from '../Footer/index';
+
 
 function Main() { 
-
     return (
         <div id="main">
+
             <Header/>
+            <h1>Novidades</h1>
+            
+            <h1>Sugestões</h1>
+            conteúdo aqui
+            <Footer/>
 
-            <h2>Conteudo aqui</h2>
-
-            <footer>
-                <h2>(DD)XXXX-XXXX</h2>
-                <div id="sociais">
-
-                </div>
-            </footer>
         </div>
     );
 }

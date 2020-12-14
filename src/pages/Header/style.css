@@ -1,0 +1,58 @@
+.header{
+    background-color: #1C396B;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icone{
+    max-width: 60px;
+    align-items: center;
+}
+.icone-img{
+    max-width: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.icone-cap{
+    color: #85ACEE;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.search-sel{
+    height: 40px;
+    width: 80px;
+    margin-right: 20px;
+}
+.search-bar{
+    height: 40px;
+    width: 500px;
+}
+#logo-fig {
+    margin-right: 20px;
+    margin-left: 0px;
+    justify-items: center;
+}
+#logo-img {
+    margin-left: 0px;
+    max-width: 110px;
+    margin-bottom: 0px;
+}#logo-cap {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: rgb(255, 136, 0);
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.icone{
+    cursor: pointer;
+}
+.link{
+    text-decoration: none;
+}
