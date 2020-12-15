@@ -2,41 +2,65 @@ import React from 'react';
 import './style.css';
 
 function Carousel(){
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides fade");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style= "display:none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style = "display:block";
+        dots[slideIndex-1].className += " active";
+    }
+
     return(
 
-        <div>
-            
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"></link>
+        <div id="slide">
 
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                         <img class="d-block w-100" src="pieces.jpg" alt="First slide"/>
-                    </div>
-                    <div class="carousel-item">
-                            <img class="d-block w-100" src="pieces.jpg" alt="Second slide"/>
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="pieces.jpg" alt="Third slide"/>
-                    </div>
+            <div class="slideshow-container">
+                <div class="mySlides fade"  style="display:none">
+                    <div class="numbertext">1 / 3</div>
+                        <img src="/pieces.jpg" style="width:100%"/>
+                    <div class="text">Caption Text</div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+                <div class="mySlides fade" style="display:none">
+                    <div class="numbertext">2 / 3</div>
+                        <img src="/pieces.jpg" style="width:100%"/>
+                    <div class="text">Caption Two</div>
+                </div>
+                <div class="mySlides fade" style="display:none">
+                    <div class="numbertext">3 / 3</div>
+                        <img src="pieces.jpg" style="width:100%"/>
+                    <div class="text">Caption Three</div>
+                </div>
+                <a class="prev" onclick={plusSlides(-1)}>&#10094;</a>
+                <a class="next" onclick={plusSlides(1)}>&#10095;</a>
             </div>
 
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+            <div style="text-align:center">
+                <span class="dot" onclick={currentSlide(1)}></span>
+                <span class="dot" onclick={currentSlide(2)}></span>
+                <span class="dot" onclick={currentSlide(3)}></span>
+            </div>
 
         </div>
 

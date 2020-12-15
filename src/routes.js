@@ -10,7 +10,7 @@ export default function Routes(){
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Main}/> 
-                <Route path="/search" component={Search}/> 
+                <Route path="/search/:campo/:tag" component={Search}/>
                 <Route path="/new/ad" component={CreateAd}/> 
                 <Route path="/ad/:id" component={Ad}/> 
                 <Route path="/shopping-cart" component={ShoppingCart}/> 

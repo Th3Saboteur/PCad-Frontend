@@ -7,19 +7,19 @@ import './style.css';
 
 function ShoppingCart() {
 
-    const user = "5f8f2ca0";
+    const cart = "5f8f2ca0";
     const history = useHistory();
     const [carts, setCarts] = useState([]); //Usa função setUser para atualizar o iniUser
 
     useEffect(() => {
-        api.get(`/carts/list/${user}`).then(response => {
+        api.get(`/carts/list/${cart}`).then(response => {
             setCarts(response.data);
         })
     }, []);
 
     async function handleDelete (user, ad){
         try{
-            await api.delete(`/carts/delete/${user}/${ad}`); 
+            await api.delete(`/carts/delete/${cart}/${ad}`); 
             setCarts(carts.filter(cart => cart.ad !== ad)); 
         }
         catch(err){
@@ -52,31 +52,34 @@ function ShoppingCart() {
             <Header />
 
             <h1 id="carrinho">Carrinho</h1>
-
-            {carts.map(cart=>
-            <div>
-                <div className="product">
-                    <img id="imagem" alt="imagem representativa" src="pieces.jpg"></img>
-                    <div className="container-lateral">
-                        <h1 className="titulo">{cart.tipo} {cart.marca} {cart.info}</h1>
-                        <div className="container-inferior">
-                            <h3>Vendedor: {cart.vendedor}</h3>
-                            <div className="container-inferior-direito">
-                                <button className="remover" onClick={()=>handleDelete(cart.user, cart.ad)}>Remover</button>
-                                <h2 className="price">R$ {cart.price}</h2>
+            <div className="teste">
+                {carts.map(cart=>
+                <div>
+                    <div className="product">
+                        <img id="imagem" alt="imagem representativa" src="pieces.jpg"></img>
+                        <div className="container-lateral">
+                            <h1 className="titulo">{cart.tipo} {cart.marca} {cart.info}</h1>
+                            <div className="container-inferior">
+                                <h3>Vendedor: {cart.vendedor}</h3>
+                                <div className="container-inferior-direito">
+                                    <button className="remover" onClick={()=>handleDelete(cart.user, cart.ad)}>Remover</button>
+                                    <h2 className="price">R$ {cart.price}</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <hr></hr>
                 </div>
-                <hr></hr>
-            </div>
 
-            )}
+                )}
+
+            </div>
 
             <div  className="container-final">
                 <button className="finalizar" onClick={finalizar}>Finalizar Compra</button>
                 <h2>Total R$ {total()}</h2>
             </div>
+
 
             <Footer />
 

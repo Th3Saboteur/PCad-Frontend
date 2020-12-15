@@ -1,70 +1,51 @@
-.container-geral{
-    height: 500px;
-}
-.ad{
-    display: flex;
-    margin: 40px;
-}
-.link{
-    text-decoration: none;
-}
-#foto{
-    width: 290px;
-    height: 210px;
-}
-.titulo{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 32px;
-    margin:0px;
-    font-weight: bold;
-    color: #1C396B;
-    height: 150px;
-}
-.preco{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 40px;
-    font-weight: bold;
-    height: 45px;
-    margin-top: 50px;
-    color: black;
-}
-.vendedor{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18x;
-    font-weight: bold;
-    margin-left: 20px;
-    margin-top: 70px;
-    color: black;
-}
-.comprar{
-    font-size: larger;
-    height: 45px;
-    width: 140px;
-    margin-left: 30px;
-    color: white;
-    background-color: #1C396B;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    border: none;
-    border-radius: 10%;
-}
-.adicionar{
-    height: 45px;
-    width: 45px;
-    margin-left: 30px;
+.teste{
+    min-height: 500px;
 }
 .container-ad{
     display: flex;
-    height: 210px;
+    margin: 0px;
 }
-.container-lateral{
+#imagem{
+    width: 290px;
+    height: 210px;
+    margin: 20px;
+}
+.container-info{
+    height: 210px;
+    margin-top: 20px;
     display: inline;
-    height: 210px;
+    width: 100%;
 }
-.info{
+#titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #1C396B;
+    text-align: left;
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+    margin-bottom: 160px;
+}
+.container-detalhes{
     display: flex;
     justify-content: space-between;
-    bottom:0;
+}
+#vendedor{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18x;
+    font-weight: bold;
+    color: black;
+    margin: 0px;
+    padding: 0px;
+}
+#preco{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    margin: 0px;
+    padding: 0px;
 }
 hr{
     height: 4px;

@@ -26,8 +26,9 @@ function Ad(){
         });
     }, []);
 
-    function teste(){
-        alert("Funcionou!!!");
+    function comprar(){
+        cart();
+        history.push('/shopping-cart');
     }
 
     function cart(){
@@ -36,6 +37,7 @@ function Ad(){
         api.post('/carts/create', cart).then(response=>{
             history.push(`/ad/${ad.id}`);
         })
+        alert("Item Adicionado ao Carrinho!");
     }
 
     return(
@@ -45,14 +47,14 @@ function Ad(){
             <div className="container-geral">
                 <h1 className="titulo">{ad.tipo} {ad.marca} {ad.info}</h1>
                 <div className="container-interno">
-                    <img id="imagem" src="logo.png"></img>
+                    <img id="imagem" src="../pieces.jpg"></img>
                     <div className="container-lateral">
                         <p>{ad.desc}</p>
                         <h3>Vendedor: {ad.nome}</h3>
                         <div className="actions">
                             <h2>R$ {ad.price}</h2>
-                            <img className="adicionar" src="shopping-cart-plus.png" onClick={cart}></img>
-                            <Link className="comprar" onClick={teste}>Comprar</Link>
+                            <img className="adicionar" src="/shopping-cart-plus.png" onClick={cart}></img>
+                            <Link className="comprar" onClick={comprar}>Comprar</Link>
                         </div>
                     </div>
                 </div>
